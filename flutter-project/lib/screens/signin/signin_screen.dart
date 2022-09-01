@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../core/app_colors.dart';
+import 'package:flutter_project/core/colors/app_colors.dart';
+import 'package:flutter_project/screens/signin/signin_contoller.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -14,11 +14,16 @@ class SignInScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              child: Image.asset('assets/images/logo.png'),
+              child: Image(
+                image: AssetImage('assets/images/logo.png'),
+              ),
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                labelText: 'Usuário',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Usuário',
+                ),
               ),
             ),
             const SizedBox(
@@ -26,7 +31,6 @@ class SignInScreen extends StatelessWidget {
             ),
             SizedBox(
               height: 39,
-              width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {},
                 child: Text('Entrar'),
@@ -35,7 +39,13 @@ class SignInScreen extends StatelessWidget {
                       MaterialStateProperty.all(AppColors.kBackgroundColor),
                 ),
               ),
-            )
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            TextButton(
+                onPressed: () => SignInController.signUp(context),
+                child: const Text('Cadastre-se'))
           ],
         ),
       ),
