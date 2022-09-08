@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/screens/cadastroAgencia/add_agencia_screen.dart';
 import 'package:flutter_project/screens/home/home_screen.dart';
+import 'package:flutter_project/screens/mostrarAgencias/show_agencia_screen.dart';
 import 'package:flutter_project/screens/screens_index.dart';
 import 'package:flutter_project/screens/signin/signin_screen.dart';
 import 'package:flutter_project/screens/signup/signup_screen.dart';
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Projeto-POO',
       home: const SplashScreen(),
       routes: {
@@ -18,6 +21,8 @@ class MyApp extends StatelessWidget {
         Screens.home: (BuildContext context) => const HomeScreen(),
         Screens.signin: (BuildContext context) => const SignInScreen(),
         Screens.signup: (BuildContext context) => const SignUpScreen(),
+        Screens.add: (BuildContext context) => const AddAgencia(),
+        Screens.show: (BuildContext context) => const ShowAgencia(),
       },
     );
   }
