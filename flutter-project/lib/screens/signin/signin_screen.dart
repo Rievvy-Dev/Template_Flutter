@@ -149,23 +149,4 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
-
-  Future<bool> login() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    var url = Uri.parse('');
-    var response = await http.post(
-      url,
-      body: {
-        'username': _emailController.text,
-        'password': _passwordContoller,
-      },
-    );
-    if (response.statusCode == 200) {
-      print(jsonDecode(response.body)['token']);
-      return true;
-    } else {
-      print(jsonDecode(response.body));
-      return false;
-    }
-  }
 }

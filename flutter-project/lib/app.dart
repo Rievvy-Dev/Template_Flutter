@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         Screens.home: (BuildContext context) => const HomeScreen(),
         Screens.signin: (BuildContext context) => const SignInScreen(),
         Screens.signup: (BuildContext context) => const SignUpScreen(),
-        Screens.add: (BuildContext context) => const AddAgencia(),
+        Screens.add: (BuildContext context) => AddAgencia(),
         Screens.show: (BuildContext context) => const ShowAgencia(),
       },
     );
